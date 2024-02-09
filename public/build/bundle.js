@@ -404,17 +404,17 @@ var app = (function () {
     			t7 = space();
     			button3 = element("button");
     			button3.textContent = "Servers";
-    			attr_dev(label, "class", "websitenameinfo svelte-1puv06t");
+    			attr_dev(label, "class", "websitenameinfo svelte-1l0ljki");
     			add_location(label, file, 6, 2, 69);
-    			attr_dev(button0, "class", "topbarbtn svelte-1puv06t");
+    			attr_dev(button0, "class", "topbarbtn svelte-1l0ljki");
     			add_location(button0, file, 8, 2, 118);
-    			attr_dev(button1, "class", "topbarbtn svelte-1puv06t");
+    			attr_dev(button1, "class", "topbarbtn svelte-1l0ljki");
     			add_location(button1, file, 9, 2, 162);
-    			attr_dev(button2, "class", "topbarbtn svelte-1puv06t");
+    			attr_dev(button2, "class", "topbarbtn svelte-1l0ljki");
     			add_location(button2, file, 10, 2, 205);
-    			attr_dev(button3, "class", "topbarbtn svelte-1puv06t");
+    			attr_dev(button3, "class", "topbarbtn svelte-1l0ljki");
     			add_location(button3, file, 11, 2, 247);
-    			attr_dev(nav, "class", "topbar svelte-1puv06t");
+    			attr_dev(nav, "class", "topbar svelte-1l0ljki");
     			add_location(nav, file, 5, 1, 46);
     			add_location(main, file, 4, 0, 38);
     		},

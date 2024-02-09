@@ -21,7 +21,7 @@
 		top: 0vh;
 		left: 0vw;
 		background-color: #1c1c1c;
-		box-shadow: 1vh 1vh 10px rgba(28, 28, 28, 0.8);
+		box-shadow: 1vh 1vh 2.8vh rgba(28, 28, 28, 0.8);
 	}
 	.websitenameinfo {
 		position: absolute;
@@ -37,7 +37,7 @@
 		font-weight: 800;
 	}
 	.topbarbtn {
-		width: 100px;
+		width: 10.1vw;
 		height: 8vh;
 		float: right;
 		border-radius: 0px;
@@ -48,15 +48,21 @@
 								 0px 0px 1.5vh #1573ff66;
 		font-weight: 600;
 		font-family: Tahoma;
+		font-size: 3.8vh;
 		border-image: linear-gradient();
 		border-width: 0px;
-		border-left-width: 1px;
+		border-left-width: 0.1vw;
 		border-color: rgb(45, 45, 45);
 		color: rgb(52, 52, 52);
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.3, 1);
+		vertical-align: top;
 }
 .topbarbtn:focus {
-    border-color: white;
-		width: 150px;
+    border-color: #0af05e;
+		width: 15vw;
+		border-left-width: 0.27vw;
+	  text-shadow: 0px 0px 3vh #6fffd6da,
+								 0px 0px 1.6vh #84ff106d;
+		
 }
 </style>
