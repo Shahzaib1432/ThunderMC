@@ -4,7 +4,28 @@ html, body {
 	height: 100%;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 0.4vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f100; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #afafaf; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 body {
+	overflow-x: hidden;
 	color: #333;
 	background-color: #111111;
 	margin: 0;
@@ -61,4 +82,28 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #666;
+}
+
+.experiencenav-info {
+	position: absolute;
+	top: 13vh;
+	left: 3vw;
+	background: -webkit-linear-gradient(rgb(216, 204, 194), #f6f6f6);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0px 0px 3vh #dbbe545e,
+							 0px 0px 1.5vh #7fb06e84;
+	font-weight: 700;
+	font-size: 2vw;
+}
+.experiencenav-text {
+	position: absolute;
+	top: 20.3vh;
+	left: 3.2vw;
+	background: -webkit-linear-gradient(rgb(192, 192, 192), #effff1);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0px 0px 3vh #dce7125e;
+	font-weight: 500;
+	font-size: 1.5vw;
 }

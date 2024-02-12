@@ -1,15 +1,33 @@
-<script>
-	export let name;
+<script lang="ts">
+	import Info from "./tabs/info.svelte";
+	import Events from "./tabs/events.svelte";
+	import Servers from "./tabs/servers.svelte";
+	import Store from "./tabs/store.svelte";
+
+	export let name
+  let selectedTab = null;
+
+  function onTopBarBtnClick(tab) {
+    selectedTab = tab;
+		console.log(selectedTab)
+  }
+	onTopBarBtnClick('3')
 </script>
 
 <main>
-	<nav class='topbar'>
-		<label class="websitenameinfo">{name}</label>
+  <nav class='topbar'>
+    <label class="websitenameinfo">{name}</label>
 
-		<button class="topbarbtn">Events</button>
-		<button class="topbarbtn">Store</button>
-		<button class="topbarbtn">Info</button>
-		<button class="topbarbtn">Servers</button>
+    <button on:click={() => onTopBarBtnClick('1')} class:selected={'1' === selectedTab} class="topbarbtn">Servers</button>
+    <button on:click={() => onTopBarBtnClick('2')} class:selected={'2' === selectedTab} class="topbarbtn">Events</button>
+    <button on:click={() => onTopBarBtnClick('3')} class:selected={'3' === selectedTab} class="topbarbtn">Store</button>
+    <button on:click={() => onTopBarBtnClick('4')} class:selected={'4' === selectedTab} class="topbarbtn">Info</button>
+  </nav>
+	<nav class="tabpage">
+    {#if selectedTab == '4'} <Info/> {/if}
+    {#if selectedTab == '2'} <Events/> {/if}
+    {#if selectedTab == '1'} <Servers/> {/if}
+    {#if selectedTab == '3'} <Store/> {/if}
 	</nav>
 </main>
 
@@ -34,7 +52,7 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	  text-shadow: 0px 0px 3vh #579dffb3;
-		font-weight: 800;
+		font-weight: 600;
 	}
 	.topbarbtn {
 		width: 10.1vw;
@@ -54,15 +72,18 @@
 		border-left-width: 0.1vw;
 		border-color: rgb(45, 45, 45);
 		color: rgb(52, 52, 52);
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.3, 1);
 		vertical-align: top;
-}
-.topbarbtn:focus {
-    border-color: #0af05e;
-		width: 15vw;
-		border-left-width: 0.27vw;
-	  text-shadow: 0px 0px 3vh #6fffd6da,
-								 0px 0px 1.6vh #84ff106d;
-		
-}
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.3, 1.4);
+	}
+	.selected {
+			border-color: #0af05e;
+			width: 15vw;
+			border-left-width: 0.27vw;
+			text-shadow: 0px 0px 3vh #6fffd6da, 0px 0px 1.6vh #84ff106d;
+	}
+	.tabpage {
+		position: absolute;
+		top: 8vh;
+		left: 0vw;
+	}
 </style>
