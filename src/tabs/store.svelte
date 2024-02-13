@@ -6,23 +6,23 @@
   <!-- !!!!!!!!!!!!! KEYS !!!!!!!!!!!!!! -->
   <label class="experiencenav-info storeinfo">Keys</label>
   <div class='itemstore'>
-    <Cardpreviewer imagedisplay='/resources/ruinic.webp'  itemname='Ruinic Key'  price=100 imagex=8/>
-    <Cardpreviewer imagedisplay='/resources/dungeon.webp' itemname='Dungeon Key' price=150 imagex=8/>
-    <Cardpreviewer imagedisplay='/resources/ender.webp'   itemname='Ender Key'   price=200 imagex=8/>
+    <Cardpreviewer imagedisplay='./public/resources/ruinic.webp'  itemname='Ruinic Key'  price=100 imagex=8/>
+    <Cardpreviewer imagedisplay='./public/resources/dungeon.webp' itemname='Dungeon Key' price=150 imagex=8/>
+    <Cardpreviewer imagedisplay='./public/resources/ender.webp'   itemname='Ender Key'   price=200 imagex=8/>
   </div>
   <label class="experiencenav-info storeinfo" style="top: 95vh;">Ranks</label>
   <div class='itemstore' style="top: 110vh;">
-    <Cardpreviewer imagedisplay='/resources/adventurer.webp' itemname='Warrior' leftlabel=2 leftbutton=2.1 price=900/>
-    <Cardpreviewer imagedisplay='/resources/pheonix.webp'    itemname='Mythic'  leftlabel=2 leftbutton=2.1 price=1250/>
-    <Cardpreviewer imagedisplay='/resources/supreme.webp'    itemname='Legend'  leftlabel=2 leftbutton=2.1 price=1700/>
-    <Cardpreviewer imagedisplay='/resources/cosmic.webp'     itemname='Heroic'  leftlabel=2 leftbutton=2.1 price=2450/>
+    <Cardpreviewer imagedisplay='./public/resources/adventurer.webp' itemname='Warrior' leftlabel=2 leftbutton=2.1 price=900/>
+    <Cardpreviewer imagedisplay='./public/resources/pheonix.webp'    itemname='Mythic'  leftlabel=2 leftbutton=2.1 price=1250/>
+    <Cardpreviewer imagedisplay='./public/resources/supreme.webp'    itemname='Legend'  leftlabel=2 leftbutton=2.1 price=1700/>
+    <Cardpreviewer imagedisplay='./public/resources/cosmic.webp'     itemname='Heroic'  leftlabel=2 leftbutton=2.1 price=2450/>
   </div>
   <label class="experiencenav-info storeinfo" style="top: 190vh;">Kits</label>
   <div class='itemstore' style="top: 205vh;">
-    <Cardpreviewer imagedisplay='/resources/adventurer-block.webp' itemname='Adventurer Kit' leftlabel=2 leftbutton=2.1 price=850/>
-    <Cardpreviewer imagedisplay='/resources/pheonix-block.webp'    itemname='Pheonix Kit'    leftlabel=2 leftbutton=2.1 price=1200/>
-    <Cardpreviewer imagedisplay='/resources/supreme-block.webp'    itemname='Supreme Kit'    leftlabel=2 leftbutton=2.1 price=1650/>
-    <Cardpreviewer imagedisplay='/resources/cosmic-block.webp'     itemname='Cosmic Kit'     leftlabel=2 leftbutton=2.1 price=2250/>
+    <Cardpreviewer imagedisplay='./public/resources/adventurer-block.webp' itemname='Adventurer Kit' leftlabel=2 leftbutton=2.1 price=850/>
+    <Cardpreviewer imagedisplay='./public/resources/pheonix-block.webp'    itemname='Pheonix Kit'    leftlabel=2 leftbutton=2.1 price=1200/>
+    <Cardpreviewer imagedisplay='./public/resources/supreme-block.webp'    itemname='Supreme Kit'    leftlabel=2 leftbutton=2.1 price=1650/>
+    <Cardpreviewer imagedisplay='./public/resources/cosmic-block.webp'     itemname='Cosmic Kit'     leftlabel=2 leftbutton=2.1 price=2250/>
   </div>
 </html>
 

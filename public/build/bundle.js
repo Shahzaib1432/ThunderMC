@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -1104,7 +1104,7 @@ var app = (function () {
 
     	cardpreviewer0 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/ruinic.webp",
+    				imagedisplay: "./public/resources/ruinic.webp",
     				itemname: "Ruinic Key",
     				price: "100",
     				imagex: "8"
@@ -1114,7 +1114,7 @@ var app = (function () {
 
     	cardpreviewer1 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/dungeon.webp",
+    				imagedisplay: "./public/resources/dungeon.webp",
     				itemname: "Dungeon Key",
     				price: "150",
     				imagex: "8"
@@ -1124,7 +1124,7 @@ var app = (function () {
 
     	cardpreviewer2 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/ender.webp",
+    				imagedisplay: "./public/resources/ender.webp",
     				itemname: "Ender Key",
     				price: "200",
     				imagex: "8"
@@ -1134,7 +1134,7 @@ var app = (function () {
 
     	cardpreviewer3 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/adventurer.webp",
+    				imagedisplay: "./public/resources/adventurer.webp",
     				itemname: "Warrior",
     				leftlabel: "2",
     				leftbutton: "2.1",
@@ -1145,7 +1145,7 @@ var app = (function () {
 
     	cardpreviewer4 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/pheonix.webp",
+    				imagedisplay: "./public/resources/pheonix.webp",
     				itemname: "Mythic",
     				leftlabel: "2",
     				leftbutton: "2.1",
@@ -1156,7 +1156,7 @@ var app = (function () {
 
     	cardpreviewer5 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/supreme.webp",
+    				imagedisplay: "./public/resources/supreme.webp",
     				itemname: "Legend",
     				leftlabel: "2",
     				leftbutton: "2.1",
@@ -1167,7 +1167,7 @@ var app = (function () {
 
     	cardpreviewer6 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/cosmic.webp",
+    				imagedisplay: "./public/resources/cosmic.webp",
     				itemname: "Heroic",
     				leftlabel: "2",
     				leftbutton: "2.1",
@@ -1178,7 +1178,7 @@ var app = (function () {
 
     	cardpreviewer7 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/adventurer-block.webp",
+    				imagedisplay: "./public/resources/adventurer-block.webp",
     				itemname: "Adventurer Kit",
     				leftlabel: "2",
     				leftbutton: "2.1",
@@ -1189,7 +1189,7 @@ var app = (function () {
 
     	cardpreviewer8 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/pheonix-block.webp",
+    				imagedisplay: "./public/resources/pheonix-block.webp",
     				itemname: "Pheonix Kit",
     				leftlabel: "2",
     				leftbutton: "2.1",
@@ -1200,7 +1200,7 @@ var app = (function () {
 
     	cardpreviewer9 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/supreme-block.webp",
+    				imagedisplay: "./public/resources/supreme-block.webp",
     				itemname: "Supreme Kit",
     				leftlabel: "2",
     				leftbutton: "2.1",
@@ -1211,7 +1211,7 @@ var app = (function () {
 
     	cardpreviewer10 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/cosmic-block.webp",
+    				imagedisplay: "./public/resources/cosmic-block.webp",
     				itemname: "Cosmic Kit",
     				leftlabel: "2",
     				leftbutton: "2.1",
@@ -1262,16 +1262,16 @@ var app = (function () {
     			add_location(div0, file$1, 7, 2, 202);
     			attr_dev(label1, "class", "experiencenav-info storeinfo svelte-ltzxvb");
     			set_style(label1, "top", "95vh");
-    			add_location(label1, file$1, 12, 2, 548);
+    			add_location(label1, file$1, 12, 2, 572);
     			attr_dev(div1, "class", "itemstore svelte-ltzxvb");
     			set_style(div1, "top", "110vh");
-    			add_location(div1, file$1, 13, 2, 628);
+    			add_location(div1, file$1, 13, 2, 652);
     			attr_dev(label2, "class", "experiencenav-info storeinfo svelte-ltzxvb");
     			set_style(label2, "top", "190vh");
-    			add_location(label2, file$1, 19, 2, 1168);
+    			add_location(label2, file$1, 19, 2, 1224);
     			attr_dev(div2, "class", "itemstore svelte-ltzxvb");
     			set_style(div2, "top", "205vh");
-    			add_location(div2, file$1, 20, 2, 1248);
+    			add_location(div2, file$1, 20, 2, 1304);
     			add_location(html, file$1, 4, 0, 86);
     		},
     		l: function claim(nodes) {
