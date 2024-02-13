@@ -828,26 +828,35 @@ var app = (function () {
     function create_fragment$2(ctx) {
     	let html;
     	let nav;
-    	let button;
+    	let button0;
     	let t0;
     	let label;
     	let t1;
+    	let t2;
+    	let button1;
+    	let mounted;
+    	let dispose;
 
     	const block = {
     		c: function create() {
     			html = element("html");
     			nav = element("nav");
-    			button = element("button");
+    			button0 = element("button");
     			t0 = space();
     			label = element("label");
     			t1 = text(/*itemname*/ ctx[1]);
-    			attr_dev(button, "class", "cardimage svelte-rq8pb4");
-    			set_style(button, "background-image", "url(" + /*imagedisplay*/ ctx[0] + ")");
-    			add_location(button, file$2, 2, 4, 42);
-    			attr_dev(nav, "class", "card svelte-rq8pb4");
+    			t2 = space();
+    			button1 = element("button");
+    			button1.textContent = "Buy";
+    			attr_dev(button0, "class", "cardimage svelte-1bszslm");
+    			set_style(button0, "background-image", "url(" + /*imagedisplay*/ ctx[0] + ")");
+    			add_location(button0, file$2, 2, 4, 42);
+    			attr_dev(nav, "class", "card svelte-1bszslm");
     			add_location(nav, file$2, 1, 2, 18);
-    			attr_dev(label, "class", "itemname svelte-rq8pb4");
+    			attr_dev(label, "class", "itemname svelte-1bszslm");
     			add_location(label, file$2, 4, 2, 130);
+    			attr_dev(button1, "class", "buybutton svelte-1bszslm");
+    			add_location(button1, file$2, 5, 2, 176);
     			attr_dev(html, "lang", "");
     			add_location(html, file$2, 0, 0, 0);
     		},
@@ -857,14 +866,21 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, html, anchor);
     			append_dev(html, nav);
-    			append_dev(nav, button);
+    			append_dev(nav, button0);
     			append_dev(html, t0);
     			append_dev(html, label);
     			append_dev(label, t1);
+    			append_dev(html, t2);
+    			append_dev(html, button1);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button1, "click", /*click_handler*/ ctx[2], false, false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*imagedisplay*/ 1) {
-    				set_style(button, "background-image", "url(" + /*imagedisplay*/ ctx[0] + ")");
+    				set_style(button0, "background-image", "url(" + /*imagedisplay*/ ctx[0] + ")");
     			}
 
     			if (dirty & /*itemname*/ 2) set_data_dev(t1, /*itemname*/ ctx[1]);
@@ -873,6 +889,8 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(html);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -898,6 +916,8 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Cardpreviewer> was created with unknown prop '${key}'`);
     	});
 
+    	const click_handler = () => alert('Contact Musab using discord to buy. \nDiscord Server: discord.gg/EgyMB9mPQz\nMusabs ID: itzmusab1234');
+
     	$$self.$$set = $$props => {
     		if ('imagedisplay' in $$props) $$invalidate(0, imagedisplay = $$props.imagedisplay);
     		if ('itemname' in $$props) $$invalidate(1, itemname = $$props.itemname);
@@ -914,7 +934,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [imagedisplay, itemname];
+    	return [imagedisplay, itemname, click_handler];
     }
 
     class Cardpreviewer extends SvelteComponentDev {
@@ -963,17 +983,26 @@ var app = (function () {
     	let current;
 
     	cardpreviewer0 = new Cardpreviewer({
-    			props: { imagedisplay: "/resources/dungeon.png" },
+    			props: {
+    				imagedisplay: "/resources/dungeon.png",
+    				itemname: "Dungeon Key"
+    			},
     			$$inline: true
     		});
 
     	cardpreviewer1 = new Cardpreviewer({
-    			props: { imagedisplay: "/resources/ender.png" },
+    			props: {
+    				imagedisplay: "/resources/ender.png",
+    				itemname: "Ender Key"
+    			},
     			$$inline: true
     		});
 
     	cardpreviewer2 = new Cardpreviewer({
-    			props: { imagedisplay: "/resources/ruinic.png" },
+    			props: {
+    				imagedisplay: "/resources/ruinic.png",
+    				itemname: "Ruinic Key"
+    			},
     			$$inline: true
     		});
 

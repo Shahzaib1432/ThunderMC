@@ -6,9 +6,9 @@
   <!-- !!!!!!!!!!!!! KEYS !!!!!!!!!!!!!! -->
   <label class="experiencenav-info keysinfo">Keys</label>
   <div class='keysitemstore'>
-    <Cardpreviewer imagedisplay='/resources/dungeon.png'/>
-    <Cardpreviewer imagedisplay='/resources/ender.png'/>
-    <Cardpreviewer imagedisplay='/resources/ruinic.png'/>
+    <Cardpreviewer imagedisplay='/resources/dungeon.png' itemname='Dungeon Key'/>
+    <Cardpreviewer imagedisplay='/resources/ender.png'   itemname='Ender Key'/>
+    <Cardpreviewer imagedisplay='/resources/ruinic.png'  itemname='Ruinic Key'/>
   </div>
 </html>
 
