@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -23,6 +23,14 @@ var app = (function () {
     }
     function safe_not_equal(a, b) {
         return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    let src_url_equal_anchor;
+    function src_url_equal(element_src, url) {
+        if (!src_url_equal_anchor) {
+            src_url_equal_anchor = document.createElement('a');
+        }
+        src_url_equal_anchor.href = url;
+        return element_src === src_url_equal_anchor.href;
     }
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
@@ -827,36 +835,49 @@ var app = (function () {
 
     function create_fragment$2(ctx) {
     	let html;
-    	let nav;
-    	let button0;
+    	let nav1;
+    	let nav0;
+    	let img;
+    	let img_src_value;
     	let t0;
     	let label;
     	let t1;
     	let t2;
-    	let button1;
+    	let button;
+    	let t3;
+    	let t4;
+    	let t5;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
     			html = element("html");
-    			nav = element("nav");
-    			button0 = element("button");
+    			nav1 = element("nav");
+    			nav0 = element("nav");
+    			img = element("img");
     			t0 = space();
     			label = element("label");
     			t1 = text(/*itemname*/ ctx[1]);
     			t2 = space();
-    			button1 = element("button");
-    			button1.textContent = "Buy";
-    			attr_dev(button0, "class", "cardimage svelte-1bszslm");
-    			set_style(button0, "background-image", "url(" + /*imagedisplay*/ ctx[0] + ")");
-    			add_location(button0, file$2, 2, 4, 42);
-    			attr_dev(nav, "class", "card svelte-1bszslm");
-    			add_location(nav, file$2, 1, 2, 18);
-    			attr_dev(label, "class", "itemname svelte-1bszslm");
-    			add_location(label, file$2, 4, 2, 130);
-    			attr_dev(button1, "class", "buybutton svelte-1bszslm");
-    			add_location(button1, file$2, 5, 2, 176);
+    			button = element("button");
+    			t3 = text("Buy (");
+    			t4 = text(/*price*/ ctx[4]);
+    			t5 = text(" PKR)");
+    			attr_dev(img, "class", "cardimage svelte-1cb71um");
+    			if (!src_url_equal(img.src, img_src_value = /*imagedisplay*/ ctx[0])) attr_dev(img, "src", img_src_value);
+    			set_style(img, "left", /*imagex*/ ctx[5] + "vw");
+    			add_location(img, file$2, 3, 6, 79);
+    			attr_dev(nav0, "class", "cardimagebehind svelte-1cb71um");
+    			add_location(nav0, file$2, 2, 4, 42);
+    			attr_dev(nav1, "class", "card svelte-1cb71um");
+    			add_location(nav1, file$2, 1, 2, 18);
+    			attr_dev(label, "class", "itemname svelte-1cb71um");
+    			set_style(label, "left", /*leftlabel*/ ctx[2] + "vw");
+    			add_location(label, file$2, 6, 2, 176);
+    			attr_dev(button, "class", "buybutton svelte-1cb71um");
+    			set_style(button, "left", /*leftbutton*/ ctx[3] + "vw");
+    			add_location(button, file$2, 7, 2, 251);
     			attr_dev(html, "lang", "");
     			add_location(html, file$2, 0, 0, 0);
     		},
@@ -865,25 +886,43 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, html, anchor);
-    			append_dev(html, nav);
-    			append_dev(nav, button0);
+    			append_dev(html, nav1);
+    			append_dev(nav1, nav0);
+    			append_dev(nav0, img);
     			append_dev(html, t0);
     			append_dev(html, label);
     			append_dev(label, t1);
     			append_dev(html, t2);
-    			append_dev(html, button1);
+    			append_dev(html, button);
+    			append_dev(button, t3);
+    			append_dev(button, t4);
+    			append_dev(button, t5);
 
     			if (!mounted) {
-    				dispose = listen_dev(button1, "click", /*click_handler*/ ctx[2], false, false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[6], false, false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*imagedisplay*/ 1) {
-    				set_style(button0, "background-image", "url(" + /*imagedisplay*/ ctx[0] + ")");
+    			if (dirty & /*imagedisplay*/ 1 && !src_url_equal(img.src, img_src_value = /*imagedisplay*/ ctx[0])) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
+    			if (dirty & /*imagex*/ 32) {
+    				set_style(img, "left", /*imagex*/ ctx[5] + "vw");
     			}
 
     			if (dirty & /*itemname*/ 2) set_data_dev(t1, /*itemname*/ ctx[1]);
+
+    			if (dirty & /*leftlabel*/ 4) {
+    				set_style(label, "left", /*leftlabel*/ ctx[2] + "vw");
+    			}
+
+    			if (dirty & /*price*/ 16) set_data_dev(t4, /*price*/ ctx[4]);
+
+    			if (dirty & /*leftbutton*/ 8) {
+    				set_style(button, "left", /*leftbutton*/ ctx[3] + "vw");
+    			}
     		},
     		i: noop,
     		o: noop,
@@ -910,7 +949,11 @@ var app = (function () {
     	validate_slots('Cardpreviewer', slots, []);
     	let { imagedisplay = '/resources/dungeon.png' } = $$props;
     	let { itemname = 'Veliz Mavidad.' } = $$props;
-    	const writable_props = ['imagedisplay', 'itemname'];
+    	let { leftlabel = 6 } = $$props;
+    	let { leftbutton = 6.2 } = $$props;
+    	let { price = 3 } = $$props;
+    	let { imagex = 3.5 } = $$props;
+    	const writable_props = ['imagedisplay', 'itemname', 'leftlabel', 'leftbutton', 'price', 'imagex'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Cardpreviewer> was created with unknown prop '${key}'`);
@@ -921,26 +964,49 @@ var app = (function () {
     	$$self.$$set = $$props => {
     		if ('imagedisplay' in $$props) $$invalidate(0, imagedisplay = $$props.imagedisplay);
     		if ('itemname' in $$props) $$invalidate(1, itemname = $$props.itemname);
+    		if ('leftlabel' in $$props) $$invalidate(2, leftlabel = $$props.leftlabel);
+    		if ('leftbutton' in $$props) $$invalidate(3, leftbutton = $$props.leftbutton);
+    		if ('price' in $$props) $$invalidate(4, price = $$props.price);
+    		if ('imagex' in $$props) $$invalidate(5, imagex = $$props.imagex);
     	};
 
-    	$$self.$capture_state = () => ({ imagedisplay, itemname });
+    	$$self.$capture_state = () => ({
+    		imagedisplay,
+    		itemname,
+    		leftlabel,
+    		leftbutton,
+    		price,
+    		imagex
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ('imagedisplay' in $$props) $$invalidate(0, imagedisplay = $$props.imagedisplay);
     		if ('itemname' in $$props) $$invalidate(1, itemname = $$props.itemname);
+    		if ('leftlabel' in $$props) $$invalidate(2, leftlabel = $$props.leftlabel);
+    		if ('leftbutton' in $$props) $$invalidate(3, leftbutton = $$props.leftbutton);
+    		if ('price' in $$props) $$invalidate(4, price = $$props.price);
+    		if ('imagex' in $$props) $$invalidate(5, imagex = $$props.imagex);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [imagedisplay, itemname, click_handler];
+    	return [imagedisplay, itemname, leftlabel, leftbutton, price, imagex, click_handler];
     }
 
     class Cardpreviewer extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { imagedisplay: 0, itemname: 1 });
+
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, {
+    			imagedisplay: 0,
+    			itemname: 1,
+    			leftlabel: 2,
+    			leftbutton: 3,
+    			price: 4,
+    			imagex: 5
+    		});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -963,6 +1029,38 @@ var app = (function () {
     	}
 
     	set itemname(value) {
+    		throw new Error("<Cardpreviewer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get leftlabel() {
+    		throw new Error("<Cardpreviewer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set leftlabel(value) {
+    		throw new Error("<Cardpreviewer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get leftbutton() {
+    		throw new Error("<Cardpreviewer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set leftbutton(value) {
+    		throw new Error("<Cardpreviewer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get price() {
+    		throw new Error("<Cardpreviewer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set price(value) {
+    		throw new Error("<Cardpreviewer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get imagex() {
+    		throw new Error("<Cardpreviewer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set imagex(value) {
     		throw new Error("<Cardpreviewer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -989,52 +1087,135 @@ var app = (function () {
     	let cardpreviewer4;
     	let t8;
     	let cardpreviewer5;
+    	let t9;
+    	let cardpreviewer6;
+    	let t10;
+    	let label2;
+    	let t12;
+    	let div2;
+    	let cardpreviewer7;
+    	let t13;
+    	let cardpreviewer8;
+    	let t14;
+    	let cardpreviewer9;
+    	let t15;
+    	let cardpreviewer10;
     	let current;
 
     	cardpreviewer0 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/dungeon.png",
-    				itemname: "Dungeon Key"
+    				imagedisplay: "/resources/ruinic.webp",
+    				itemname: "Ruinic Key",
+    				price: "100",
+    				imagex: "8"
     			},
     			$$inline: true
     		});
 
     	cardpreviewer1 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/ender.png",
-    				itemname: "Ender Key"
+    				imagedisplay: "/resources/dungeon.webp",
+    				itemname: "Dungeon Key",
+    				price: "150",
+    				imagex: "8"
     			},
     			$$inline: true
     		});
 
     	cardpreviewer2 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/ruinic.png",
-    				itemname: "Ruinic Key"
+    				imagedisplay: "/resources/ender.webp",
+    				itemname: "Ender Key",
+    				price: "200",
+    				imagex: "8"
     			},
     			$$inline: true
     		});
 
     	cardpreviewer3 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/adventurer badge.png",
-    				itemname: "Adventurer Key"
+    				imagedisplay: "/resources/adventurer.webp",
+    				itemname: "Warrior",
+    				leftlabel: "2",
+    				leftbutton: "2.1",
+    				price: "900"
     			},
     			$$inline: true
     		});
 
     	cardpreviewer4 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/supreme badge.png",
-    				itemname: "Supreme Key"
+    				imagedisplay: "/resources/pheonix.webp",
+    				itemname: "Mythic",
+    				leftlabel: "2",
+    				leftbutton: "2.1",
+    				price: "1250"
     			},
     			$$inline: true
     		});
 
     	cardpreviewer5 = new Cardpreviewer({
     			props: {
-    				imagedisplay: "/resources/pheonix badge.png",
-    				itemname: "Pheonix Key"
+    				imagedisplay: "/resources/supreme.webp",
+    				itemname: "Legend",
+    				leftlabel: "2",
+    				leftbutton: "2.1",
+    				price: "1700"
+    			},
+    			$$inline: true
+    		});
+
+    	cardpreviewer6 = new Cardpreviewer({
+    			props: {
+    				imagedisplay: "/resources/cosmic.webp",
+    				itemname: "Heroic",
+    				leftlabel: "2",
+    				leftbutton: "2.1",
+    				price: "2450"
+    			},
+    			$$inline: true
+    		});
+
+    	cardpreviewer7 = new Cardpreviewer({
+    			props: {
+    				imagedisplay: "/resources/adventurer-block.webp",
+    				itemname: "Adventurer Kit",
+    				leftlabel: "2",
+    				leftbutton: "2.1",
+    				price: "850"
+    			},
+    			$$inline: true
+    		});
+
+    	cardpreviewer8 = new Cardpreviewer({
+    			props: {
+    				imagedisplay: "/resources/pheonix-block.webp",
+    				itemname: "Pheonix Kit",
+    				leftlabel: "2",
+    				leftbutton: "2.1",
+    				price: "1200"
+    			},
+    			$$inline: true
+    		});
+
+    	cardpreviewer9 = new Cardpreviewer({
+    			props: {
+    				imagedisplay: "/resources/supreme-block.webp",
+    				itemname: "Supreme Kit",
+    				leftlabel: "2",
+    				leftbutton: "2.1",
+    				price: "1650"
+    			},
+    			$$inline: true
+    		});
+
+    	cardpreviewer10 = new Cardpreviewer({
+    			props: {
+    				imagedisplay: "/resources/cosmic-block.webp",
+    				itemname: "Cosmic Kit",
+    				leftlabel: "2",
+    				leftbutton: "2.1",
+    				price: "2250"
     			},
     			$$inline: true
     		});
@@ -1061,16 +1242,36 @@ var app = (function () {
     			create_component(cardpreviewer4.$$.fragment);
     			t8 = space();
     			create_component(cardpreviewer5.$$.fragment);
-    			attr_dev(label0, "class", "experiencenav-info storeinfo svelte-us8n0x");
+    			t9 = space();
+    			create_component(cardpreviewer6.$$.fragment);
+    			t10 = space();
+    			label2 = element("label");
+    			label2.textContent = "Kits";
+    			t12 = space();
+    			div2 = element("div");
+    			create_component(cardpreviewer7.$$.fragment);
+    			t13 = space();
+    			create_component(cardpreviewer8.$$.fragment);
+    			t14 = space();
+    			create_component(cardpreviewer9.$$.fragment);
+    			t15 = space();
+    			create_component(cardpreviewer10.$$.fragment);
+    			attr_dev(label0, "class", "experiencenav-info storeinfo svelte-ltzxvb");
     			add_location(label0, file$1, 6, 2, 142);
-    			attr_dev(div0, "class", "itemstore svelte-us8n0x");
+    			attr_dev(div0, "class", "itemstore svelte-ltzxvb");
     			add_location(div0, file$1, 7, 2, 202);
-    			attr_dev(label1, "class", "experiencenav-info storeinfo svelte-us8n0x");
+    			attr_dev(label1, "class", "experiencenav-info storeinfo svelte-ltzxvb");
     			set_style(label1, "top", "95vh");
-    			add_location(label1, file$1, 12, 2, 485);
-    			attr_dev(div1, "class", "itemstore svelte-us8n0x");
+    			add_location(label1, file$1, 12, 2, 548);
+    			attr_dev(div1, "class", "itemstore svelte-ltzxvb");
     			set_style(div1, "top", "110vh");
-    			add_location(div1, file$1, 13, 2, 565);
+    			add_location(div1, file$1, 13, 2, 628);
+    			attr_dev(label2, "class", "experiencenav-info storeinfo svelte-ltzxvb");
+    			set_style(label2, "top", "190vh");
+    			add_location(label2, file$1, 19, 2, 1168);
+    			attr_dev(div2, "class", "itemstore svelte-ltzxvb");
+    			set_style(div2, "top", "205vh");
+    			add_location(div2, file$1, 20, 2, 1248);
     			add_location(html, file$1, 4, 0, 86);
     		},
     		l: function claim(nodes) {
@@ -1095,6 +1296,19 @@ var app = (function () {
     			mount_component(cardpreviewer4, div1, null);
     			append_dev(div1, t8);
     			mount_component(cardpreviewer5, div1, null);
+    			append_dev(div1, t9);
+    			mount_component(cardpreviewer6, div1, null);
+    			append_dev(html, t10);
+    			append_dev(html, label2);
+    			append_dev(html, t12);
+    			append_dev(html, div2);
+    			mount_component(cardpreviewer7, div2, null);
+    			append_dev(div2, t13);
+    			mount_component(cardpreviewer8, div2, null);
+    			append_dev(div2, t14);
+    			mount_component(cardpreviewer9, div2, null);
+    			append_dev(div2, t15);
+    			mount_component(cardpreviewer10, div2, null);
     			current = true;
     		},
     		p: noop,
@@ -1106,6 +1320,11 @@ var app = (function () {
     			transition_in(cardpreviewer3.$$.fragment, local);
     			transition_in(cardpreviewer4.$$.fragment, local);
     			transition_in(cardpreviewer5.$$.fragment, local);
+    			transition_in(cardpreviewer6.$$.fragment, local);
+    			transition_in(cardpreviewer7.$$.fragment, local);
+    			transition_in(cardpreviewer8.$$.fragment, local);
+    			transition_in(cardpreviewer9.$$.fragment, local);
+    			transition_in(cardpreviewer10.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -1115,6 +1334,11 @@ var app = (function () {
     			transition_out(cardpreviewer3.$$.fragment, local);
     			transition_out(cardpreviewer4.$$.fragment, local);
     			transition_out(cardpreviewer5.$$.fragment, local);
+    			transition_out(cardpreviewer6.$$.fragment, local);
+    			transition_out(cardpreviewer7.$$.fragment, local);
+    			transition_out(cardpreviewer8.$$.fragment, local);
+    			transition_out(cardpreviewer9.$$.fragment, local);
+    			transition_out(cardpreviewer10.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -1125,6 +1349,11 @@ var app = (function () {
     			destroy_component(cardpreviewer3);
     			destroy_component(cardpreviewer4);
     			destroy_component(cardpreviewer5);
+    			destroy_component(cardpreviewer6);
+    			destroy_component(cardpreviewer7);
+    			destroy_component(cardpreviewer8);
+    			destroy_component(cardpreviewer9);
+    			destroy_component(cardpreviewer10);
     		}
     	};
 
