@@ -4,16 +4,22 @@
 
 <html>
   <!-- !!!!!!!!!!!!! KEYS !!!!!!!!!!!!!! -->
-  <label class="experiencenav-info keysinfo">Keys</label>
-  <div class='keysitemstore'>
+  <label class="experiencenav-info storeinfo">Keys</label>
+  <div class='itemstore'>
     <Cardpreviewer imagedisplay='/resources/dungeon.png' itemname='Dungeon Key'/>
     <Cardpreviewer imagedisplay='/resources/ender.png'   itemname='Ender Key'/>
     <Cardpreviewer imagedisplay='/resources/ruinic.png'  itemname='Ruinic Key'/>
   </div>
+  <label class="experiencenav-info storeinfo" style="top: 95vh;">Ranks</label>
+  <div class='itemstore' style="top: 110vh;">
+    <Cardpreviewer imagedisplay='/resources/adventurer badge.png' itemname='Adventurer Key'/>
+    <Cardpreviewer imagedisplay='/resources/supreme badge.png'    itemname='Supreme Key'/>
+    <Cardpreviewer imagedisplay='/resources/pheonix badge.png'    itemname='Pheonix Key'/>
+  </div>
 </html>
 
 <style>
-  .keysinfo {
+  .storeinfo {
     top: 3vh;   
     left: 25vw;
     width: 50vw;
@@ -25,7 +31,7 @@
                  0px 0px 1.5vh #baf40b54 !important;
   }
 
-  .keysitemstore {
+  .itemstore {
     position: absolute;
     top: 15vh;
     display: flex; /* Use flex to display cards horizontally */

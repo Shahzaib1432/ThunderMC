@@ -972,14 +972,23 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let html;
-    	let label;
+    	let label0;
     	let t1;
-    	let div;
+    	let div0;
     	let cardpreviewer0;
     	let t2;
     	let cardpreviewer1;
     	let t3;
     	let cardpreviewer2;
+    	let t4;
+    	let label1;
+    	let t6;
+    	let div1;
+    	let cardpreviewer3;
+    	let t7;
+    	let cardpreviewer4;
+    	let t8;
+    	let cardpreviewer5;
     	let current;
 
     	cardpreviewer0 = new Cardpreviewer({
@@ -1006,22 +1015,62 @@ var app = (function () {
     			$$inline: true
     		});
 
+    	cardpreviewer3 = new Cardpreviewer({
+    			props: {
+    				imagedisplay: "/resources/adventurer badge.png",
+    				itemname: "Adventurer Key"
+    			},
+    			$$inline: true
+    		});
+
+    	cardpreviewer4 = new Cardpreviewer({
+    			props: {
+    				imagedisplay: "/resources/supreme badge.png",
+    				itemname: "Supreme Key"
+    			},
+    			$$inline: true
+    		});
+
+    	cardpreviewer5 = new Cardpreviewer({
+    			props: {
+    				imagedisplay: "/resources/pheonix badge.png",
+    				itemname: "Pheonix Key"
+    			},
+    			$$inline: true
+    		});
+
     	const block = {
     		c: function create() {
     			html = element("html");
-    			label = element("label");
-    			label.textContent = "Keys";
+    			label0 = element("label");
+    			label0.textContent = "Keys";
     			t1 = space();
-    			div = element("div");
+    			div0 = element("div");
     			create_component(cardpreviewer0.$$.fragment);
     			t2 = space();
     			create_component(cardpreviewer1.$$.fragment);
     			t3 = space();
     			create_component(cardpreviewer2.$$.fragment);
-    			attr_dev(label, "class", "experiencenav-info keysinfo svelte-cazkji");
-    			add_location(label, file$1, 6, 2, 142);
-    			attr_dev(div, "class", "keysitemstore svelte-cazkji");
-    			add_location(div, file$1, 7, 2, 201);
+    			t4 = space();
+    			label1 = element("label");
+    			label1.textContent = "Ranks";
+    			t6 = space();
+    			div1 = element("div");
+    			create_component(cardpreviewer3.$$.fragment);
+    			t7 = space();
+    			create_component(cardpreviewer4.$$.fragment);
+    			t8 = space();
+    			create_component(cardpreviewer5.$$.fragment);
+    			attr_dev(label0, "class", "experiencenav-info storeinfo svelte-us8n0x");
+    			add_location(label0, file$1, 6, 2, 142);
+    			attr_dev(div0, "class", "itemstore svelte-us8n0x");
+    			add_location(div0, file$1, 7, 2, 202);
+    			attr_dev(label1, "class", "experiencenav-info storeinfo svelte-us8n0x");
+    			set_style(label1, "top", "95vh");
+    			add_location(label1, file$1, 12, 2, 485);
+    			attr_dev(div1, "class", "itemstore svelte-us8n0x");
+    			set_style(div1, "top", "110vh");
+    			add_location(div1, file$1, 13, 2, 565);
     			add_location(html, file$1, 4, 0, 86);
     		},
     		l: function claim(nodes) {
@@ -1029,14 +1078,23 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, html, anchor);
-    			append_dev(html, label);
+    			append_dev(html, label0);
     			append_dev(html, t1);
-    			append_dev(html, div);
-    			mount_component(cardpreviewer0, div, null);
-    			append_dev(div, t2);
-    			mount_component(cardpreviewer1, div, null);
-    			append_dev(div, t3);
-    			mount_component(cardpreviewer2, div, null);
+    			append_dev(html, div0);
+    			mount_component(cardpreviewer0, div0, null);
+    			append_dev(div0, t2);
+    			mount_component(cardpreviewer1, div0, null);
+    			append_dev(div0, t3);
+    			mount_component(cardpreviewer2, div0, null);
+    			append_dev(html, t4);
+    			append_dev(html, label1);
+    			append_dev(html, t6);
+    			append_dev(html, div1);
+    			mount_component(cardpreviewer3, div1, null);
+    			append_dev(div1, t7);
+    			mount_component(cardpreviewer4, div1, null);
+    			append_dev(div1, t8);
+    			mount_component(cardpreviewer5, div1, null);
     			current = true;
     		},
     		p: noop,
@@ -1045,12 +1103,18 @@ var app = (function () {
     			transition_in(cardpreviewer0.$$.fragment, local);
     			transition_in(cardpreviewer1.$$.fragment, local);
     			transition_in(cardpreviewer2.$$.fragment, local);
+    			transition_in(cardpreviewer3.$$.fragment, local);
+    			transition_in(cardpreviewer4.$$.fragment, local);
+    			transition_in(cardpreviewer5.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(cardpreviewer0.$$.fragment, local);
     			transition_out(cardpreviewer1.$$.fragment, local);
     			transition_out(cardpreviewer2.$$.fragment, local);
+    			transition_out(cardpreviewer3.$$.fragment, local);
+    			transition_out(cardpreviewer4.$$.fragment, local);
+    			transition_out(cardpreviewer5.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -1058,6 +1122,9 @@ var app = (function () {
     			destroy_component(cardpreviewer0);
     			destroy_component(cardpreviewer1);
     			destroy_component(cardpreviewer2);
+    			destroy_component(cardpreviewer3);
+    			destroy_component(cardpreviewer4);
+    			destroy_component(cardpreviewer5);
     		}
     	};
 
