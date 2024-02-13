@@ -1,11 +1,19 @@
 <html lang="">
-  <nav class="card">
+  <nav class="card" on:click={showCustomPopup}>
     <nav class="cardimagebehind">
       <img class='cardimage' src="{imagedisplay}" style="left: {imagex}vw;"/>
     </nav>
   </nav>
   <label class="itemname" style="left: {leftlabel}vw;">{itemname}</label>
   <button class='buybutton' style="left: {leftbutton}vw;" on:click={() => alert('Contact Musab using discord to buy. \nDiscord Server: discord.gg/EgyMB9mPQz\nMusabs ID: itzmusab1234')}>Buy ({price} PKR)</button>
+
+  <!-- Click popup -->
+  <div class="overlay" id="overlay"></div>
+  <div class="custom-popup" id="customPopup">
+    <label class="popuptext" id='popuptextlabel'>{info}</label>
+    <button on:click={hideCustomPopup} class="popupclosebutton">Close</button>
+  </div>
+
 </html>
 
 <script>
@@ -15,6 +23,21 @@
   export let leftbutton = 6.2
   export let price = 3
   export let imagex = 3.5
+  export let info = ''
+
+    // Function to show the custom popup
+    function showCustomPopup() {
+      var popuptextlabel = document.getElementById('popuptextlabel');
+      popuptextlabel.textContent = info
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('customPopup').style.display = 'block';
+    }
+
+    // Function to hide the custom popup
+    function hideCustomPopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('customPopup').style.display = 'none';
+    }
 </script>
 
 <style>
@@ -28,6 +51,14 @@
     margin: auto;
     margin-top: 3vw;
     justify-self: center;
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+  .card:hover {
+    box-shadow: 0vw 0vw 2vw 0 white;
+    cursor: pointer;
+  }
+  .card:active {
+    box-shadow: 0vw 0vw 2vw 0 black;
   }
   .cardimage {
     image-rendering: optimizeSpeed;

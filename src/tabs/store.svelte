@@ -6,9 +6,9 @@
   <!-- !!!!!!!!!!!!! KEYS !!!!!!!!!!!!!! -->
   <label class="experiencenav-info storeinfo">Keys</label>
   <div class='itemstore'>
-    <Cardpreviewer imagedisplay='resources/ruinic.webp'  itemname='Ruinic Key'  price=100 imagex=8/>
-    <Cardpreviewer imagedisplay='resources/dungeon.webp' itemname='Dungeon Key' price=150 imagex=8/>
-    <Cardpreviewer imagedisplay='resources/ender.webp'   itemname='Ender Key'   price=200 imagex=8/>
+    <Cardpreviewer imagedisplay='resources/ruinic.webp'  itemname='Ruinic Key'  price=100 imagex=8 info='This key can be used to open the Ruinic Crate'/>
+    <Cardpreviewer imagedisplay='resources/dungeon.webp' itemname='Dungeon Key' price=150 imagex=8 info='This key can be used to open the Dungeon Crate'/>
+    <Cardpreviewer imagedisplay='resources/ender.webp'   itemname='Ender Key'   price=200 imagex=8 info='This key can be used to open the Ender Crate'/>
   </div>
   <label class="experiencenav-info storeinfo" style="top: 95vh;">Ranks</label>
   <div class='itemstore' style="top: 110vh;">
@@ -50,3 +50,4 @@
     box-shadow: 1vw 0 3vw 0 black;
   }
 </style>
+

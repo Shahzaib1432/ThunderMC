@@ -840,13 +840,21 @@ var app = (function () {
     	let img;
     	let img_src_value;
     	let t0;
-    	let label;
+    	let label0;
     	let t1;
     	let t2;
-    	let button;
+    	let button0;
     	let t3;
     	let t4;
     	let t5;
+    	let t6;
+    	let div0;
+    	let t7;
+    	let div1;
+    	let label1;
+    	let t8;
+    	let t9;
+    	let button1;
     	let mounted;
     	let dispose;
 
@@ -857,27 +865,47 @@ var app = (function () {
     			nav0 = element("nav");
     			img = element("img");
     			t0 = space();
-    			label = element("label");
+    			label0 = element("label");
     			t1 = text(/*itemname*/ ctx[1]);
     			t2 = space();
-    			button = element("button");
+    			button0 = element("button");
     			t3 = text("Buy (");
     			t4 = text(/*price*/ ctx[4]);
     			t5 = text(" PKR)");
-    			attr_dev(img, "class", "cardimage svelte-1cb71um");
+    			t6 = space();
+    			div0 = element("div");
+    			t7 = space();
+    			div1 = element("div");
+    			label1 = element("label");
+    			t8 = text(/*info*/ ctx[6]);
+    			t9 = space();
+    			button1 = element("button");
+    			button1.textContent = "Close";
+    			attr_dev(img, "class", "cardimage svelte-mulxgg");
     			if (!src_url_equal(img.src, img_src_value = /*imagedisplay*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			set_style(img, "left", /*imagex*/ ctx[5] + "vw");
-    			add_location(img, file$2, 3, 6, 79);
-    			attr_dev(nav0, "class", "cardimagebehind svelte-1cb71um");
-    			add_location(nav0, file$2, 2, 4, 42);
-    			attr_dev(nav1, "class", "card svelte-1cb71um");
+    			add_location(img, file$2, 3, 6, 106);
+    			attr_dev(nav0, "class", "cardimagebehind svelte-mulxgg");
+    			add_location(nav0, file$2, 2, 4, 69);
+    			attr_dev(nav1, "class", "card svelte-mulxgg");
     			add_location(nav1, file$2, 1, 2, 18);
-    			attr_dev(label, "class", "itemname svelte-1cb71um");
-    			set_style(label, "left", /*leftlabel*/ ctx[2] + "vw");
-    			add_location(label, file$2, 6, 2, 176);
-    			attr_dev(button, "class", "buybutton svelte-1cb71um");
-    			set_style(button, "left", /*leftbutton*/ ctx[3] + "vw");
-    			add_location(button, file$2, 7, 2, 251);
+    			attr_dev(label0, "class", "itemname svelte-mulxgg");
+    			set_style(label0, "left", /*leftlabel*/ ctx[2] + "vw");
+    			add_location(label0, file$2, 6, 2, 203);
+    			attr_dev(button0, "class", "buybutton svelte-mulxgg");
+    			set_style(button0, "left", /*leftbutton*/ ctx[3] + "vw");
+    			add_location(button0, file$2, 7, 2, 278);
+    			attr_dev(div0, "class", "overlay");
+    			attr_dev(div0, "id", "overlay");
+    			add_location(div0, file$2, 10, 2, 517);
+    			attr_dev(label1, "class", "popuptext");
+    			attr_dev(label1, "id", "popuptextlabel");
+    			add_location(label1, file$2, 12, 4, 610);
+    			attr_dev(button1, "class", "popupclosebutton");
+    			add_location(button1, file$2, 13, 4, 675);
+    			attr_dev(div1, "class", "custom-popup");
+    			attr_dev(div1, "id", "customPopup");
+    			add_location(div1, file$2, 11, 2, 561);
     			attr_dev(html, "lang", "");
     			add_location(html, file$2, 0, 0, 0);
     		},
@@ -890,16 +918,29 @@ var app = (function () {
     			append_dev(nav1, nav0);
     			append_dev(nav0, img);
     			append_dev(html, t0);
-    			append_dev(html, label);
-    			append_dev(label, t1);
+    			append_dev(html, label0);
+    			append_dev(label0, t1);
     			append_dev(html, t2);
-    			append_dev(html, button);
-    			append_dev(button, t3);
-    			append_dev(button, t4);
-    			append_dev(button, t5);
+    			append_dev(html, button0);
+    			append_dev(button0, t3);
+    			append_dev(button0, t4);
+    			append_dev(button0, t5);
+    			append_dev(html, t6);
+    			append_dev(html, div0);
+    			append_dev(html, t7);
+    			append_dev(html, div1);
+    			append_dev(div1, label1);
+    			append_dev(label1, t8);
+    			append_dev(div1, t9);
+    			append_dev(div1, button1);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[6], false, false, false, false);
+    				dispose = [
+    					listen_dev(nav1, "click", /*showCustomPopup*/ ctx[7], false, false, false, false),
+    					listen_dev(button0, "click", /*click_handler*/ ctx[8], false, false, false, false),
+    					listen_dev(button1, "click", hideCustomPopup, false, false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
@@ -915,21 +956,23 @@ var app = (function () {
     			if (dirty & /*itemname*/ 2) set_data_dev(t1, /*itemname*/ ctx[1]);
 
     			if (dirty & /*leftlabel*/ 4) {
-    				set_style(label, "left", /*leftlabel*/ ctx[2] + "vw");
+    				set_style(label0, "left", /*leftlabel*/ ctx[2] + "vw");
     			}
 
     			if (dirty & /*price*/ 16) set_data_dev(t4, /*price*/ ctx[4]);
 
     			if (dirty & /*leftbutton*/ 8) {
-    				set_style(button, "left", /*leftbutton*/ ctx[3] + "vw");
+    				set_style(button0, "left", /*leftbutton*/ ctx[3] + "vw");
     			}
+
+    			if (dirty & /*info*/ 64) set_data_dev(t8, /*info*/ ctx[6]);
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(html);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -944,6 +987,11 @@ var app = (function () {
     	return block;
     }
 
+    function hideCustomPopup() {
+    	document.getElementById('overlay').style.display = 'none';
+    	document.getElementById('customPopup').style.display = 'none';
+    }
+
     function instance$2($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Cardpreviewer', slots, []);
@@ -953,7 +1001,25 @@ var app = (function () {
     	let { leftbutton = 6.2 } = $$props;
     	let { price = 3 } = $$props;
     	let { imagex = 3.5 } = $$props;
-    	const writable_props = ['imagedisplay', 'itemname', 'leftlabel', 'leftbutton', 'price', 'imagex'];
+    	let { info = '' } = $$props;
+
+    	// Function to show the custom popup
+    	function showCustomPopup() {
+    		var popuptextlabel = document.getElementById('popuptextlabel');
+    		popuptextlabel.textContent = info;
+    		document.getElementById('overlay').style.display = 'block';
+    		document.getElementById('customPopup').style.display = 'block';
+    	}
+
+    	const writable_props = [
+    		'imagedisplay',
+    		'itemname',
+    		'leftlabel',
+    		'leftbutton',
+    		'price',
+    		'imagex',
+    		'info'
+    	];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Cardpreviewer> was created with unknown prop '${key}'`);
@@ -968,6 +1034,7 @@ var app = (function () {
     		if ('leftbutton' in $$props) $$invalidate(3, leftbutton = $$props.leftbutton);
     		if ('price' in $$props) $$invalidate(4, price = $$props.price);
     		if ('imagex' in $$props) $$invalidate(5, imagex = $$props.imagex);
+    		if ('info' in $$props) $$invalidate(6, info = $$props.info);
     	};
 
     	$$self.$capture_state = () => ({
@@ -976,7 +1043,10 @@ var app = (function () {
     		leftlabel,
     		leftbutton,
     		price,
-    		imagex
+    		imagex,
+    		info,
+    		showCustomPopup,
+    		hideCustomPopup
     	});
 
     	$$self.$inject_state = $$props => {
@@ -986,13 +1056,24 @@ var app = (function () {
     		if ('leftbutton' in $$props) $$invalidate(3, leftbutton = $$props.leftbutton);
     		if ('price' in $$props) $$invalidate(4, price = $$props.price);
     		if ('imagex' in $$props) $$invalidate(5, imagex = $$props.imagex);
+    		if ('info' in $$props) $$invalidate(6, info = $$props.info);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [imagedisplay, itemname, leftlabel, leftbutton, price, imagex, click_handler];
+    	return [
+    		imagedisplay,
+    		itemname,
+    		leftlabel,
+    		leftbutton,
+    		price,
+    		imagex,
+    		info,
+    		showCustomPopup,
+    		click_handler
+    	];
     }
 
     class Cardpreviewer extends SvelteComponentDev {
@@ -1005,7 +1086,8 @@ var app = (function () {
     			leftlabel: 2,
     			leftbutton: 3,
     			price: 4,
-    			imagex: 5
+    			imagex: 5,
+    			info: 6
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -1063,6 +1145,14 @@ var app = (function () {
     	set imagex(value) {
     		throw new Error("<Cardpreviewer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get info() {
+    		throw new Error("<Cardpreviewer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set info(value) {
+    		throw new Error("<Cardpreviewer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src\tabs\store.svelte generated by Svelte v3.59.2 */
@@ -1107,7 +1197,8 @@ var app = (function () {
     				imagedisplay: "resources/ruinic.webp",
     				itemname: "Ruinic Key",
     				price: "100",
-    				imagex: "8"
+    				imagex: "8",
+    				info: "This key can be used to open the Ruinic Crate"
     			},
     			$$inline: true
     		});
@@ -1117,7 +1208,8 @@ var app = (function () {
     				imagedisplay: "resources/dungeon.webp",
     				itemname: "Dungeon Key",
     				price: "150",
-    				imagex: "8"
+    				imagex: "8",
+    				info: "This key can be used to open the Dungeon Crate"
     			},
     			$$inline: true
     		});
@@ -1127,7 +1219,8 @@ var app = (function () {
     				imagedisplay: "resources/ender.webp",
     				itemname: "Ender Key",
     				price: "200",
-    				imagex: "8"
+    				imagex: "8",
+    				info: "This key can be used to open the Ender Crate"
     			},
     			$$inline: true
     		});
@@ -1262,16 +1355,16 @@ var app = (function () {
     			add_location(div0, file$1, 7, 2, 202);
     			attr_dev(label1, "class", "experiencenav-info storeinfo svelte-ltzxvb");
     			set_style(label1, "top", "95vh");
-    			add_location(label1, file$1, 12, 2, 545);
+    			add_location(label1, file$1, 12, 2, 704);
     			attr_dev(div1, "class", "itemstore svelte-ltzxvb");
     			set_style(div1, "top", "110vh");
-    			add_location(div1, file$1, 13, 2, 625);
+    			add_location(div1, file$1, 13, 2, 784);
     			attr_dev(label2, "class", "experiencenav-info storeinfo svelte-ltzxvb");
     			set_style(label2, "top", "190vh");
-    			add_location(label2, file$1, 19, 2, 1161);
+    			add_location(label2, file$1, 19, 2, 1320);
     			attr_dev(div2, "class", "itemstore svelte-ltzxvb");
     			set_style(div2, "top", "205vh");
-    			add_location(div2, file$1, 20, 2, 1241);
+    			add_location(div2, file$1, 20, 2, 1400);
     			add_location(html, file$1, 4, 0, 86);
     		},
     		l: function claim(nodes) {
