@@ -10,7 +10,7 @@
   <!-- Click popup -->
   <div class="overlay" id="overlay"></div>
   <div class="custom-popup" id="customPopup">
-    <label class="popuptext" id='popuptextlabel'>{info}</label>
+    <label class="popuptext" id='popuptextlabel' style="font-size: {textfontsize}vw;">{info}</label>
     <button on:click={hideCustomPopup} class="popupclosebutton">Close</button>
   </div>
 
@@ -24,19 +24,30 @@
   export let price = 3
   export let imagex = 3.5
   export let info = ''
+  export let textfontsize = 2
+  export let verticalalign = false
 
     // Function to show the custom popup
     function showCustomPopup() {
       var popuptextlabel = document.getElementById('popuptextlabel');
-      popuptextlabel.textContent = info
+      popuptextlabel.innerHTML = info
+      popuptextlabel.style.fontSize = `${textfontsize}vw`
+      if (verticalalign === true) {
+        popuptextlabel.classList.add('verticalaligntext')
+      }
+      else {
+        popuptextlabel.classList.remove('verticalaligntext')
+      }
+      document.body.style.overflowY = 'hidden';
       document.getElementById('overlay').style.display = 'block';
       document.getElementById('customPopup').style.display = 'block';
     }
 
     // Function to hide the custom popup
     function hideCustomPopup() {
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('customPopup').style.display = 'none';
+      document.body.style.overflowY = '';
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('customPopup').style.display = 'none';
     }
 </script>
 
@@ -51,7 +62,7 @@
     margin: auto;
     margin-top: 3vw;
     justify-self: center;
-    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: all 0.3s ease-in-out;
   }
   .card:hover {
     box-shadow: 0vw 0vw 2vw 0 white;
@@ -108,10 +119,18 @@
     text-shadow: 0px 0px 3vh #dbbe545e,
                 0px 0px 1.5vh #7fb06e84;
     border-color: transparent;
-    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1.7);    
+    transition: all 0.3s ease-in-out;
   }
   .buybutton:active {
     background: -webkit-linear-gradient(#905422, #00e1ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 3vh #54db62a8,
+                0px 0px 1.5vh #14b4c9bb;
+    font-size: 2.3vw;
+  }
+  .buybutton:hover {
+    background: -webkit-linear-gradient(#db5f5f, #18af78);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0px 0px 3vh #54db62a8,
