@@ -4,7 +4,6 @@
 
     'Heroic': [
       'Customizable Discord Profile',
-      'Discount on shop of 20%',
       '100000$ Instant In-game Money',
       'Exclusive Access to Special Discord Chats',
       'Access to /workbench',
@@ -30,7 +29,6 @@
 
     'Legend': [
       'Customizable Discord Profile',
-      'Discount on shop of 15%',
       '80000$ Instant In-game Money',
       'Exclusive Access to Special Discord Chats',
       'Access to /workbench',
@@ -51,7 +49,6 @@
 
     'Mythic': [
       'Customizable Discord Profile',
-      'Discount on shop of 10%',
       '60000$ Instant In-game Money',
       'Exclusive Access to Special Discord Chats',
       'Access to /workbench',
@@ -66,7 +63,6 @@
 
     'Warrior': [
       'Customizable Discord Profile',
-      'Discount on shop of 5%',
       '35000$ Instant In-game Money',
       'Exclusive Access to Special Discord Chats',
       'Access to /workbench',
