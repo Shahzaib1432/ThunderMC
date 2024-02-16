@@ -67,7 +67,7 @@
   .green-line-horizontal {
     height: 92vh;
     width: 0.27vw;
-    background-color: #0af05eb0;
+    background-image: linear-gradient(#212121, #7f7f7f);
   }
   /* NAH Inn'it bruv Vote! */
   .voteinfo {

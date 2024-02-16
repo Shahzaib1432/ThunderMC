@@ -11,7 +11,7 @@
     selectedTab = tab;
 		console.log(selectedTab)
   }
-	onTopBarBtnClick('3')
+	onTopBarBtnClick('1')
 </script>
 
 <main>
@@ -19,7 +19,7 @@
     <label class="websitenameinfo">{name}</label>
 
     <button on:click={() => onTopBarBtnClick('1')} class:selected={'1' === selectedTab} class="topbarbtn">Servers</button>
-    <button on:click={() => onTopBarBtnClick('2')} class:selected={'2' === selectedTab} class="topbarbtn">Events</button>
+    <!-- <button on:click={() => onTopBarBtnClick('2')} class:selected={'2' === selectedTab} class="topbarbtn">Events</button> -->
     <button on:click={() => onTopBarBtnClick('3')} class:selected={'3' === selectedTab} class="topbarbtn">Store</button>
     <button on:click={() => onTopBarBtnClick('4')} class:selected={'4' === selectedTab} class="topbarbtn">Info</button>
   </nav>

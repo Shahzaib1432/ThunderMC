@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Cardpreviewer from "./widgets/cardpreviewer.svelte";
   let benefits = {
 
@@ -72,14 +72,220 @@
       'Exclusive Name Color',
     ]
   }
+  let kititems = {
+    'Pheonix': {
+        'Pheonix Helmet': [
+            'Aqua Affinity', 
+            'Blast Protection 2', 
+            'Fire Protection 2',
+            'Protection 4',
+            'Mending',
+            'Respiration 3',
+            'Thorns 3',
+            'Unbreaking 4'],
+        'Pheonix Chestplate': [
+            'Blast Protection 2', 
+            'Fire Protection 2',
+            'Protection 4',
+            'Mending',
+            'Thorns 3',
+            'Unbreaking 4'],
+        'Pheonix Leggings': [
+            'Blast Protection 2', 
+            'Fire Protection 2',
+            'Protection 4',
+            'Mending',
+            'Thorns 3',
+            'Unbreaking 4'],
+        'Pheonix Boots': [
+            'Blast Protection 2', 
+            'Fire Protection 2',
+            'Protection 4',
+            'Mending',
+            'Thorns 3',
+            'Unbreaking 4',
+            'Feather Falling 4',
+            'Depth Strider 4'],
+        'Pheonix Sword': [
+          'Unbreaking 4',
+          'Mending',
+          'Sweeping Edge 4',
+          'Sharpness 5',
+          'Fire Aspect 2'
+        ],
+        'Pheonix Axe': [
+          'Unbreaking 4',
+          'Mending',
+          'Sharpness 5',
+          'Effeciency 5'
+        ],
+        'Pheonix Pickaxe': [
+          'Unbreaking 4',
+          'Mending',
+          'Fortune 3',
+          'Effeciency 5'
+        ],
+        '64x Golden Apples': '',
+        '2x Totem of Undying': '',
+        '2x Dungeon Key': '',
+        '2x Ruinic Key': '',
+    },
+    'Cosmic': {
+        'Cosmic Sword': [
+            'Sharpness 4',
+            'Bane of Arthopods 4',
+            'Fire Aspect 4',
+            'Looting 5', 
+            'Sweeping Edge 5', 
+            'Unbreaking 5', 
+            'Mending'],
+            'Cosmic Pickaxe': [
+            'Effeciency 6',
+            'Fortune 4',
+            'Unbreaking 5', 
+            'Mending'],
+        'Cosmic Axe': [
+            'Effeciency 6',
+            'Unbreaking 5', 
+            'Mending'],
+        'Cosmic Shovel': [
+            'Effeciency 6',
+            'Unbreaking 5', 
+            'Mending'],
+        'Cosmic Helmet': [
+            'Aqua Affinity 4',
+            'Blast Protection 4',
+            'Projectile Protection 4',
+            'Protection 6',
+            'Respiration 5',
+            'Thorns 5',
+            'Unbreaking 5', 
+            'Mending'],
+        'Cosmic Chestplate': [
+            'Blast Protection 4',
+            'Projectile Protection 4',
+            'Protection 6',
+            'Thorns 5',
+            'Unbreaking 5', 
+            'Mending'],
+        'Cosmic Leggings': [
+            'Blast Protection 4',
+            'Projectile Protection 4',
+            'Protection 6',
+            'Thorns 5',
+            'Unbreaking 5', 
+            'Mending'],
+        'Cosmic Boots': [
+            'Depth Strider 5',
+            'Feather Falling 5',
+            'Blast Protection 4',
+            'Projectile Protection 4',
+            'Protection 6',
+            'Thorns 5',
+            'Unbreaking 5', 
+            'Mending'],
+        '64x Golden Apple':'',
+        '4x Ruinic Key':'',
+        '4x Dungeon Key':'',
+        '64x Obsidian':'',
+        '64x End Crystal':''
+    },
+    'Adventurer': {
+      'Adventurer Helmet'    :['Aqua Affinity', 'Mending', 'Protection 4', 'Respiration 3', 'Thorns 3', 'Unbreaking 3'],
+      'Adventurer Chestplate':['Mending', 'Protection 4',  'Thorns 3', 'Unbreaking 3'],
+      'Adventurer Leggings'  :['Mending', 'Protection 4',  'Thorns 3', 'Unbreaking 3'],
+      'Adventurer Boots'     :['Mending', 'Protection 4',  'Thorns 3', 'Unbreaking 3', 'Feather Falling 3', 'Depth Strider 3'],
+      'Adventurer Sword'     :['Mending', 'Sharpness 4',   'Sweeping Edge 3', 'Fire Aspect 2', 'Unbreaking 3'],
+      'Adventurer Axe'       :['Mending', 'Sharpness 4',   'Effeciency 4', 'Unbreaking 3'],
+      'Adventurer Pickaxe'   :['Mending', 'Fortune 3',     'Effeciency 4', 'Unbreaking 3'],
+      '64x Golden Apples':'',
+      '1x Totem of Undying':'',
+    },
+    'Supreme': {
+        'Supreme Sword': [
+            'Sharpness 6',
+            'Bane of Arthopods 3',
+            'Fire Aspect 3',
+            'Looting 4', 
+            'Sweeping Edge 4', 
+            'Unbreaking 4', 
+            'Mending'],
+        'Supreme Pickaxe': [
+            'Effeciency 6',
+            'Fortune 4',
+            'Unbreaking 4', 
+            'Mending'],
+        'Supreme Axe': [
+            'Effeciency 6',
+            'Sharpness 6',
+            'Unbreaking 4', 
+            'Mending'],
+        'Supreme Helmet': [
+            'Aqua Affinity 3',
+            'Blast Protection 3',
+            'Projectile Protection 3',
+            'Fire Protection 3',
+            'Protection 5',
+            'Respiration 4',
+            'Thorns 4',
+            'Unbreaking 4',
+            'Mending'],
+        'Supreme Chestplate': [
+            'Blast Protection 3',
+            'Projectile Protection 3',
+            'Protection 5',
+            'Fire Protection 3',
+            'Thorns 4',
+            'Unbreaking 4', 
+            'Mending'],
+        'Supreme Leggings': [
+            'Blast Protection 3',
+            'Projectile Protection 3',
+            'Protection 5',
+            'Fire Protection 3',
+            'Thorns 4',
+            'Unbreaking 4', 
+            'Mending'],
+        'Supreme Boots': [
+            'Depth Strider 4',
+            'Feather Falling 4',
+            'Blast Protection 3',
+            'Projectile Protection 3',
+            'Fire Protection 3',
+            'Protection 5',
+            'Thorns 4',
+            'Unbreaking 4', 
+            'Mending'],
+        '64x Golden Apple':'',
+        '3x Ruinic Key':'',
+        '3x Dungeon Key':'',
+    },
+  }
 
   function getBenefitsOfRank(rank) {
     let output = ''
     for (let i = 0; i <= benefits[rank].length - 1; i++) {
-      output += `• ${benefits[rank][i]}<br>`
+      output += `&nbsp;&nbsp;• &nbsp;${benefits[rank][i]}<br>`
     }
     return output
   }
+  function getItemsOfKit(kit) {
+    let output = `${kit} Kit Items:<br>`;
+    const keys = Object.keys(kititems[kit]);
+
+    for (let i = 0; i < keys.length; i++) {
+      let enchants = ' • ' + String(kititems[kit][keys[i]]).replaceAll(',', `<br>${'&nbsp;'.repeat(9)}• `)
+      let itemNameInFL = keys[i]
+      if (enchants !== ' • ') {
+        output += `&nbsp;&nbsp;&nbsp;&nbsp;• ${itemNameInFL}: <br>${'&nbsp;'.repeat(8)}${enchants}<br>`;
+      } else {
+        output += `&nbsp;&nbsp;&nbsp;&nbsp;• &nbsp;${itemNameInFL}<br>`;
+      }
+    }
+
+    return output;
+  }
+
 
 </script>
 
@@ -88,40 +294,29 @@
   <!-- svelte-ignore a11y-label-has-associated-control -->
   <label class="experiencenav-info storeinfo">Keys</label>
   <div class='itemstore'>
-    <Cardpreviewer imagedisplay='resources/ruinic.webp'  itemname='Ruinic Key'  price=100 verticalalign={true} imagex=8 info='This key can be used to open the Ruinic Crate' />
-    <Cardpreviewer imagedisplay='resources/dungeon.webp' itemname='Dungeon Key' price=150 verticalalign={true} imagex=8 info='This key can be used to open the Dungeon Crate'/>
-    <Cardpreviewer imagedisplay='resources/ender.webp'   itemname='Ender Key'   price=200 verticalalign={true} imagex=8 info='This key can be used to open the Ender Crate'  textfontsize=2.01/>
+    <Cardpreviewer imagedisplay='resources/ruinic.webp'  itemname='Ruinic Key'  price={100} verticalalign={true} imagex={8} xaligntext='center' info='This key can be used to open the Ruinic Crate' />
+    <Cardpreviewer imagedisplay='resources/dungeon.webp' itemname='Dungeon Key' price={150} verticalalign={true} imagex={8} xaligntext='center' info='This key can be used to open the Dungeon Crate'/>
+    <Cardpreviewer imagedisplay='resources/ender.webp'   itemname='Ender Key'   price={200} verticalalign={true} imagex={8} xaligntext='center' info='This key can be used to open the Ender Crate'  textfontsize={2.01}/>
   </div>
   <!-- svelte-ignore a11y-label-has-associated-control -->
   <label class="experiencenav-info storeinfo" style="top: 95vh;">Ranks</label>
   <div class='itemstore' style="top: 110vh;">
-    <Cardpreviewer imagedisplay='resources/adventurer.webp' itemname='Warrior' leftlabel=2 leftbutton=2.1 price=900  textfontsize=2   info='Warrior Rank Perks:<br>{getBenefitsOfRank('Warrior')}'/>
-    <Cardpreviewer imagedisplay='resources/pheonix.webp'    itemname='Mythic'  leftlabel=2 leftbutton=2.1 price=1250 textfontsize=1.7 info='Mythic Rank Perks:<br>{getBenefitsOfRank('Mythic')}'/>
-    <Cardpreviewer imagedisplay='resources/supreme.webp'    itemname='Legend'  leftlabel=2 leftbutton=2.1 price=1700 textfontsize=1.7 info='Legend Rank Perks:<br>{getBenefitsOfRank('Legend')}'/>
-    <Cardpreviewer imagedisplay='resources/cosmic.webp'     itemname='Heroic'  leftlabel=2 leftbutton=2.1 price=2450 textfontsize=1.7 info='Heroic Rank Perks:<br>{getBenefitsOfRank('Heroic')}'/>
+    <Cardpreviewer imagedisplay='resources/adventurer.webp' itemname='Adventurer' leftlabel={2} leftbutton={2.1} price={900}  textfontsize={1.9} info='Warrior Rank Perks:<br>{getBenefitsOfRank('Warrior')}'/>
+    <Cardpreviewer imagedisplay='resources/pheonix.webp'    itemname='Pheonix'  leftlabel={2} leftbutton={2.1} price={1250} textfontsize={1.9} info='Mythic Rank Perks:<br>{getBenefitsOfRank('Mythic')}'/>
+    <Cardpreviewer imagedisplay='resources/supreme.webp'    itemname='Supreme'  leftlabel={2} leftbutton={2.1} price={1700} textfontsize={1.9} info='Legend Rank Perks:<br>{getBenefitsOfRank('Legend')}'/>
+    <Cardpreviewer imagedisplay='resources/cosmic.webp'     itemname='Cosmic'  leftlabel={2} leftbutton={2.1} price={2450} textfontsize={1.9} info='Heroic Rank Perks:<br>{getBenefitsOfRank('Heroic')}'/>
   </div>
   <!-- svelte-ignore a11y-label-has-associated-control -->
   <label class="experiencenav-info storeinfo" style="top: 190vh;">Kits</label>
   <div class='itemstore' style="top: 205vh;">
-    <Cardpreviewer imagedisplay='resources/adventurer-block.webp' itemname='Adventurer Kit' leftlabel=2 leftbutton=2.1 price=850/>
-    <Cardpreviewer imagedisplay='resources/pheonix-block.webp'    itemname='Pheonix Kit'    leftlabel=2 leftbutton=2.1 price=1200/>
-    <Cardpreviewer imagedisplay='resources/supreme-block.webp'    itemname='Supreme Kit'    leftlabel=2 leftbutton=2.1 price=1650/>
-    <Cardpreviewer imagedisplay='resources/cosmic-block.webp'     itemname='Cosmic Kit'     leftlabel=2 leftbutton=2.1 price=2250/>
+    <Cardpreviewer imagedisplay='resources/adventurer-block.webp' itemname='Adventurer Kit' leftlabel={2} leftbutton={2.1} price={850}  info={getItemsOfKit('Adventurer')}/>
+    <Cardpreviewer imagedisplay='resources/pheonix-block.webp'    itemname='Pheonix Kit'    leftlabel={2} leftbutton={2.1} price={1200} info={getItemsOfKit('Pheonix')}/>
+    <Cardpreviewer imagedisplay='resources/supreme-block.webp'    itemname='Supreme Kit'    leftlabel={2} leftbutton={2.1} price={1650} info={getItemsOfKit('Supreme')}/>
+    <Cardpreviewer imagedisplay='resources/cosmic-block.webp'     itemname='Cosmic Kit'     leftlabel={2} leftbutton={2.1} price={2250} info={getItemsOfKit('Cosmic')}/>
   </div>
 </html>
 
 <style>
-  .storeinfo {
-    top: 3vh;   
-    left: 25vw;
-    width: 50vw;
-    text-align: center;
-    font-size: 3vw;
-    background: -webkit-linear-gradient(#ff8f8f, #f4e40bbb) !important;
-    -webkit-background-clip: text !important;
-    text-shadow: 0px 0px 3vh #ff6f0075,
-                 0px 0px 1.5vh #baf40b54 !important;
-  }
   .itemstore {
     position: absolute;
     top: 15vh;

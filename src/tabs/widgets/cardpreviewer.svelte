@@ -10,7 +10,7 @@
   <!-- Click popup -->
   <div class="overlay" id="overlay"></div>
   <div class="custom-popup" id="customPopup">
-    <label class="popuptext" id='popuptextlabel' style="font-size: {textfontsize}vw;">{info}</label>
+    <label class="popuptext" id='popuptextlabel' style="font-size: {textfontsize}vw; text-align: {xaligntext};">{info}</label>
     <button on:click={hideCustomPopup} class="popupclosebutton">Close</button>
   </div>
 
@@ -26,12 +26,14 @@
   export let info = ''
   export let textfontsize = 2
   export let verticalalign = false
+  export let xaligntext = 'left'
 
     // Function to show the custom popup
     function showCustomPopup() {
       var popuptextlabel = document.getElementById('popuptextlabel');
       popuptextlabel.innerHTML = info
       popuptextlabel.style.fontSize = `${textfontsize}vw`
+      popuptextlabel.style.textAlign = xaligntext
       if (verticalalign === true) {
         popuptextlabel.classList.add('verticalaligntext')
       }
@@ -52,59 +54,6 @@
 </script>
 
 <style>
-  .card {
-    display: flex; /* Make it a flex container */
-    width: 21vw;
-    height: 60vh;
-    background-image: linear-gradient(#3d3d3d, #171717);
-    border-radius: 1.2vw;
-    box-shadow: 1vw 1vw 1vw 0 black;
-    margin: auto;
-    margin-top: 3vw;
-    justify-self: center;
-    transition: all 0.3s ease-in-out;
-  }
-  .card:hover {
-    box-shadow: 0vw 0vw 2vw 0 white;
-    cursor: pointer;
-  }
-  .card:active {
-    box-shadow: 0vw 0vw 2vw 0 black;
-  }
-  .cardimage {
-    image-rendering: optimizeSpeed;
-    object-fit: contain;
-    position: absolute;
-    top: 9vh;
-    width: 18vw;
-    height: 44vh;
-  }
-  .cardimagebehind {
-    width: 21vw;
-    height: 44vh;
-    border-color: rgba(0, 0, 0, 0.447);
-    border-radius: 1vw;
-    border-width: 0.3vw;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    box-shadow: 0.2vw 1vw 1vw rgba(0, 0, 0, 0.69);
-  }
-  .cardimage:active {
-    background-color: transparent;
-  }
-  .itemname {
-    position: absolute;
-    top: 7.6vh;
-    width: 21vw;
-    font-size: 2.1vw;
-    font-weight: 500;
-    text-align: center;
-    background: -webkit-linear-gradient(#ffdfc4, #e7cb12);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0px 0px 3vh #dbbe545e,
-                0px 0px 1.5vh #7fb06e84;
-  }
   .buybutton {
     position: absolute;
     top: 50vh;
