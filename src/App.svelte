@@ -11,12 +11,10 @@
     selectedTab = tab;
 		console.log(selectedTab)
   }
-	onTopBarBtnClick('1')
+	onTopBarBtnClick('4')
 </script>
 
 <main>
-	<title>e</title>
-
 	<nav class='topbar'>
     <label class="websitenameinfo">{name}</label>
 
