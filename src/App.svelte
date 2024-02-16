@@ -15,7 +15,9 @@
 </script>
 
 <main>
-  <nav class='topbar'>
+	<title>e</title>
+
+	<nav class='topbar'>
     <label class="websitenameinfo">{name}</label>
 
     <button on:click={() => onTopBarBtnClick('1')} class:selected={'1' === selectedTab} class="topbarbtn">Servers</button>
@@ -29,7 +31,6 @@
     {#if selectedTab == '1'} <Servers/> {/if}
     {#if selectedTab == '3'} <Store/> {/if}
 	</nav>
-	<title>ThunderMC</title>
 </main>
 
 <style>

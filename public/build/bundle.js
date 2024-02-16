@@ -2403,7 +2403,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src\\App.svelte";
 
-    // (27:4) {#if selectedTab == '4'}
+    // (29:4) {#if selectedTab == '4'}
     function create_if_block_3(ctx) {
     	let info;
     	let current;
@@ -2435,14 +2435,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(27:4) {#if selectedTab == '4'}",
+    		source: "(29:4) {#if selectedTab == '4'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (28:4) {#if selectedTab == '2'}
+    // (30:4) {#if selectedTab == '2'}
     function create_if_block_2(ctx) {
     	let events;
     	let current;
@@ -2474,14 +2474,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(28:4) {#if selectedTab == '2'}",
+    		source: "(30:4) {#if selectedTab == '2'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (29:4) {#if selectedTab == '1'}
+    // (31:4) {#if selectedTab == '1'}
     function create_if_block_1(ctx) {
     	let servers;
     	let current;
@@ -2513,14 +2513,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(29:4) {#if selectedTab == '1'}",
+    		source: "(31:4) {#if selectedTab == '1'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:4) {#if selectedTab == '3'}
+    // (32:4) {#if selectedTab == '3'}
     function create_if_block(ctx) {
     	let store;
     	let current;
@@ -2552,7 +2552,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(30:4) {#if selectedTab == '3'}",
+    		source: "(32:4) {#if selectedTab == '3'}",
     		ctx
     	});
 
@@ -2561,22 +2561,22 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let main;
+    	let title;
+    	let t1;
     	let nav0;
     	let label;
-    	let t0;
-    	let t1;
-    	let button0;
+    	let t2;
     	let t3;
-    	let button1;
+    	let button0;
     	let t5;
-    	let button2;
+    	let button1;
     	let t7;
-    	let nav1;
-    	let t8;
+    	let button2;
     	let t9;
+    	let nav1;
     	let t10;
     	let t11;
-    	let title;
+    	let t12;
     	let current;
     	let mounted;
     	let dispose;
@@ -2588,46 +2588,46 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
+    			title = element("title");
+    			title.textContent = "e";
+    			t1 = space();
     			nav0 = element("nav");
     			label = element("label");
-    			t0 = text(/*name*/ ctx[0]);
-    			t1 = space();
+    			t2 = text(/*name*/ ctx[0]);
+    			t3 = space();
     			button0 = element("button");
     			button0.textContent = "Servers";
-    			t3 = space();
+    			t5 = space();
     			button1 = element("button");
     			button1.textContent = "Store";
-    			t5 = space();
+    			t7 = space();
     			button2 = element("button");
     			button2.textContent = "Info";
-    			t7 = space();
+    			t9 = space();
     			nav1 = element("nav");
     			if (if_block0) if_block0.c();
-    			t8 = space();
-    			if (if_block1) if_block1.c();
-    			t9 = space();
-    			if (if_block2) if_block2.c();
     			t10 = space();
-    			if (if_block3) if_block3.c();
+    			if (if_block1) if_block1.c();
     			t11 = space();
-    			title = element("title");
-    			title.textContent = "ThunderMC";
+    			if (if_block2) if_block2.c();
+    			t12 = space();
+    			if (if_block3) if_block3.c();
+    			add_location(title, file, 17, 1, 367);
     			attr_dev(label, "class", "websitenameinfo svelte-1awxazb");
-    			add_location(label, file, 18, 4, 393);
+    			add_location(label, file, 20, 4, 411);
     			attr_dev(button0, "class", "topbarbtn svelte-1awxazb");
     			toggle_class(button0, "selected", '1' === /*selectedTab*/ ctx[1]);
-    			add_location(button0, file, 20, 4, 444);
+    			add_location(button0, file, 22, 4, 462);
     			attr_dev(button1, "class", "topbarbtn svelte-1awxazb");
     			toggle_class(button1, "selected", '3' === /*selectedTab*/ ctx[1]);
-    			add_location(button1, file, 22, 4, 698);
+    			add_location(button1, file, 24, 4, 716);
     			attr_dev(button2, "class", "topbarbtn svelte-1awxazb");
     			toggle_class(button2, "selected", '4' === /*selectedTab*/ ctx[1]);
-    			add_location(button2, file, 23, 4, 819);
+    			add_location(button2, file, 25, 4, 837);
     			attr_dev(nav0, "class", "topbar svelte-1awxazb");
-    			add_location(nav0, file, 17, 2, 368);
+    			add_location(nav0, file, 19, 1, 386);
     			attr_dev(nav1, "class", "tabpage svelte-1awxazb");
-    			add_location(nav1, file, 25, 1, 945);
-    			add_location(title, file, 31, 1, 1154);
+    			add_location(nav1, file, 27, 1, 963);
     			add_location(main, file, 16, 0, 359);
     		},
     		l: function claim(nodes) {
@@ -2635,26 +2635,26 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
+    			append_dev(main, title);
+    			append_dev(main, t1);
     			append_dev(main, nav0);
     			append_dev(nav0, label);
-    			append_dev(label, t0);
-    			append_dev(nav0, t1);
-    			append_dev(nav0, button0);
+    			append_dev(label, t2);
     			append_dev(nav0, t3);
-    			append_dev(nav0, button1);
+    			append_dev(nav0, button0);
     			append_dev(nav0, t5);
+    			append_dev(nav0, button1);
+    			append_dev(nav0, t7);
     			append_dev(nav0, button2);
-    			append_dev(main, t7);
+    			append_dev(main, t9);
     			append_dev(main, nav1);
     			if (if_block0) if_block0.m(nav1, null);
-    			append_dev(nav1, t8);
-    			if (if_block1) if_block1.m(nav1, null);
-    			append_dev(nav1, t9);
-    			if (if_block2) if_block2.m(nav1, null);
     			append_dev(nav1, t10);
+    			if (if_block1) if_block1.m(nav1, null);
+    			append_dev(nav1, t11);
+    			if (if_block2) if_block2.m(nav1, null);
+    			append_dev(nav1, t12);
     			if (if_block3) if_block3.m(nav1, null);
-    			append_dev(main, t11);
-    			append_dev(main, title);
     			current = true;
 
     			if (!mounted) {
@@ -2668,7 +2668,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*name*/ 1) set_data_dev(t0, /*name*/ ctx[0]);
+    			if (!current || dirty & /*name*/ 1) set_data_dev(t2, /*name*/ ctx[0]);
 
     			if (!current || dirty & /*selectedTab*/ 2) {
     				toggle_class(button0, "selected", '1' === /*selectedTab*/ ctx[1]);
@@ -2691,7 +2691,7 @@ var app = (function () {
     					if_block0 = create_if_block_3(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
-    					if_block0.m(nav1, t8);
+    					if_block0.m(nav1, t10);
     				}
     			} else if (if_block0) {
     				group_outros();
@@ -2712,7 +2712,7 @@ var app = (function () {
     					if_block1 = create_if_block_2(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
-    					if_block1.m(nav1, t9);
+    					if_block1.m(nav1, t11);
     				}
     			} else if (if_block1) {
     				group_outros();
@@ -2733,7 +2733,7 @@ var app = (function () {
     					if_block2 = create_if_block_1(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
-    					if_block2.m(nav1, t10);
+    					if_block2.m(nav1, t12);
     				}
     			} else if (if_block2) {
     				group_outros();
