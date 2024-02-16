@@ -2575,6 +2575,8 @@ var app = (function () {
     	let t8;
     	let t9;
     	let t10;
+    	let t11;
+    	let title;
     	let current;
     	let mounted;
     	let dispose;
@@ -2607,6 +2609,9 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			t10 = space();
     			if (if_block3) if_block3.c();
+    			t11 = space();
+    			title = element("title");
+    			title.textContent = "ThunderMC";
     			attr_dev(label, "class", "websitenameinfo svelte-1awxazb");
     			add_location(label, file, 18, 4, 393);
     			attr_dev(button0, "class", "topbarbtn svelte-1awxazb");
@@ -2622,6 +2627,7 @@ var app = (function () {
     			add_location(nav0, file, 17, 2, 368);
     			attr_dev(nav1, "class", "tabpage svelte-1awxazb");
     			add_location(nav1, file, 25, 1, 945);
+    			add_location(title, file, 31, 1, 1154);
     			add_location(main, file, 16, 0, 359);
     		},
     		l: function claim(nodes) {
@@ -2647,6 +2653,8 @@ var app = (function () {
     			if (if_block2) if_block2.m(nav1, null);
     			append_dev(nav1, t10);
     			if (if_block3) if_block3.m(nav1, null);
+    			append_dev(main, t11);
+    			append_dev(main, title);
     			current = true;
 
     			if (!mounted) {

@@ -29,6 +29,7 @@
     {#if selectedTab == '1'} <Servers/> {/if}
     {#if selectedTab == '3'} <Store/> {/if}
 	</nav>
+	<title>ThunderMC</title>
 </main>
 
 <style>
